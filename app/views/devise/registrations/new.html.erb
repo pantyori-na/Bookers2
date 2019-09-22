@@ -1,76 +1,47 @@
-  <body>
-    <!-- <header class="navbar navbar-fixed-top navbar-inverse">
-      <div class="container">
-        <nav class='nav navbar-nav navbar-left' >
-          <span>Bookers</span>
-        </nav>
-        <nav>
-          <ul class="nav navbar-nav navbar-right">
-            <li><a class="glyphicon glyphicon-home home" href="/"> Home</a></li>
-            <li><a class="glyphicon glyphicon-link about" href="/home/about"> About</a></li>
-            <li><a class="glyphicon glyphicon-edit sign_up" href="/users/sign_up"> sign up</a></li>
-            <li><a class="glyphicon glyphicon-log-in sign_in" href="/users/sign_in"> login</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header> -->
 
-    <div class='body'>
-      <div class='container'>
-        <p id="notice"></p>
-        <h2>Sign up</h2>
+<div class='body'>
+  <div class='container'>
+    <p id="notice"></p>
+    <div class="row">
+      <h2>Sign up</h2>
+    </div>
 
-        <!-- <form class="new_user" id="new_user" action="/users" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="rYTzMxiqrrIYt3qeujqYlcF8N053jgWyYWHuUiB8ewq/vzLSA9pvulAu56P5blLVOXru1/eVUZQm8PgWvCte2Q==" />
-        -->
         <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= devise_error_messages! %>
 
-        <div class="field">
+        <div class="row mt-5">
           <label for="user_name">Name</label><br />
-          <%= f.text_field :name, autofocus: true, class:"name", id:"inputName", placeholder:"名前"%>
-          <!--  <input autofocus="autofocus" class="name" type="text" name="user[name]" id="user_name" /> -->
+          <%= f.text_field :name, autofocus: true, class:"name", id:"inputName" %>
         </div>
 
-          <div class="field">
-            <label for="user_email">Email</label><br />
-            <%= f.email_field :email, class:"emaill", id:"inputEmail", placeholder:"メールアドレス"%>
-            <!-- <input autofocus="autofocus" class="email" type="email" value="" name="user[email]" id="user_email" /> -->
-          </div>
+        <div class="row mt-5">
+          <label for="user_email">Email</label><br />
+          <%= f.email_field :email, class:"emaill", id:"inputEmail" %>
+        </div>
 
-          <div class="field">
-            <label for="user_password">Password</label>
-            <br />
-            <em>(6 characters minimum)</em>
-              <br />
-            <%= f.password_field :password, autocomplete: "off", class:"password", id:"inputPassword", placeholder:"パスワード" %>
-              <!-- <input autocomplete="off" class="password" type="password" name="user[password]" id="user_password" /> -->
-          </div>
+        <div class="row mt-5">
+          <label for="user_password">Password</label>
+          <em>(6 characters minimum)</em>
+          <br />
+          <%= f.password_field :password, autocomplete: "off", class:"password", id:"inputPassword" %>
+        </div>
 
-          <div class="field">
-            <label for="user_password_confirmation">Password confirmation</label><br />
-            <%= f.password_field :password_confirmation, autocomplete: "off", class:"password_confirm", id:"inputConfirmPassword", placeholder:"パスワード確認" %>
-            <!-- input autocomplete="off" class="password_confirm" type="password" name="user[password_confirmation]" id="user_password_confirmation" /> -->
-          </div>
+        <div class="row mt-5">
+          <label for="user_password_confirmation">Password confirmation</label><br />
+          <%= f.password_field :password_confirmation, autocomplete: "off", class:"password_confirm", id:"inputConfirmPassword" %>
+        </div>
 
-          <div class="actions">
-            <%= f.submit "サインアップ", class:"btn btn-success" %>
-            <!-- <input type="submit" name="commit" value="Sign up" class="btn btn-success" data-disable-with="Sign up" /> -->
-          </div>
-          <% end %>
-          <!--  </form> -->
-          <a class="sign_in" href="/users/sign_in">Log in</a><br />
+        <div class="row mt-5">
+          <%= f.submit "Sign up", class:"btn btn-success mt-5" %>
+        </div>
+        <% end %>
+        <!--  </form> -->
+        <div class="row">
+          <a href="/users/sign_in">Log in</a>
         </div>
       </div>
+    </div>
 
-      <footer>
-        <div class='container'>
-          <div class='row'>
-            <div class='col-xs-3 col-xs-offset-9'>
-              <p>CopyRight Infratop.inc</p>
-            </div>
-          </div>
-        </div>
-      </footer>
 
 
 
