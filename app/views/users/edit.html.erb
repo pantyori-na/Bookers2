@@ -1,7 +1,9 @@
 	<div class='body'>
 		<div class='container'>
 			<p id="notice"></p>
-			<h2>User info</h2>
+			<div class="row">
+				<h2>User info</h2>
+			</div>
 
 			<%= form_for(@user) do |f| %>
 			<div class="row">
@@ -10,38 +12,19 @@
 			</div>
 			<div class="row">
 				<label>Image</label>
-				<%= f.attachment_field :profile_image, class: "user-edit-form" %>
+				<%= f.attachment_field :profile_image %>
 			</div>
 			<div class="row">
-				<label>Introduction</label>
+				<div class="col-xs-2">
+					<label>introduction</label>
+					<%= f.text_area :introduction %>
+				</div>
 			</div>
-			<div class="actions">
-				<%= f.submit "Update User", class:"btn btn-primary form-control" %>
+			<div class="actions col-xs-2">
+				<%= f.submit do %>
+				<button type="button" class="btn btn-default">Update User</button>
+				<% end %>
 			</div>
 			<% end %>
-
-		<!-- 	<form class="edit_user" id="edit_user_7501" enctype="multipart/form-data" action="/users/7501" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="_method" value="patch" /><input type="hidden" name="authenticity_token" value="LQgSR3q/9qJkxoXgfqq1Bvw4exlUPSEzVkKt/VB4MMs4ZM79EljwcsiU24dCdebkuoiY1p0BXVZvnDcbwO7ZFQ==" />
-
-
-				<div class="field">
-					<label for="user_name">Name</label>
-					<input class="name" type="text" value="jjj" name="user[name]" id="user_name" />
-				</div>
-
-				<div class="field">
-					<label for="user_image">Image</label>
-					<input value="{}" data-reference="36cc2218fe84c131cb5bc5ae4da8c517" type="hidden" name="user[profile_image]" /><input class="user_image" data-reference="36cc2218fe84c131cb5bc5ae4da8c517" include_hidden="false" type="file" name="user[profile_image]" id="user_profile_image" />
-				</div>
-
-				<div class="field">
-					<label for="user_introduction">Introduction</label>
-					<textarea class="introduction" name="user[introduction]" id="user_introduction">
-					</textarea>
-				</div>
-
-				<div class="actions">
-					<input type="submit" name="commit" value="Update User" data-disable-with="Update User" />
-				</div>
-			</form> -->
 		</div>
 	</div>

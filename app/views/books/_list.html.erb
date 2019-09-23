@@ -1,13 +1,13 @@
-  <!-- 共通部分 -->
+ <!-- 共通部分 -->
   <div class='body'>
     <div class='container'>
       <!-- error message -->
-      <% if @book_new.errors.any? %>
+      <% if book_new.errors.any? %>
       <div id="error_explanation">
         <font color="red">
-          <h2><%= @book_new.errors.count %>errors prohibited this obj from being saved:</h2>
+          <h2><%= book_new.errors.count %>errors prohibited this obj from being saved:</h2>
           <ul>
-            <% @book_new.errors.full_messages.each do |message| %>
+            <% book_new.errors.full_messages.each do |message| %>
             <li><%= message %></li>
             <% end %>
           </ul>
@@ -20,7 +20,7 @@
          <h2>User info</h2>
          <table class='table'>
           <tr>
-           <%= attachment_image_tag @user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg" %>
+          <%= attachment_image_tag current_user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg" %>
          </tr>
          <tr>
            <th>name</th>
@@ -40,7 +40,7 @@
 
        <h2>New book</h2>
 
-       <%= form_for(@book_new, url: books_path) do |f| %>
+       <%= form_for(book_new, url: books_path) do |f| %>
        <div class="row">
         <label>Title</label>
         <%= f.text_field :title, class:"form-control" %>
@@ -55,28 +55,3 @@
       <% end %>
     </div>
     <!-- 共通部分 -->
-
-    <div class='col-xs-9'>
-      <h2>Books</h2>
-
-      <table class='table table-hover table-inverse'>
-       <thead>
-        <tr>
-         <th></th>
-         <th>Title</th>
-         <th>Opinion</th>
-         <th colspan="3"></th>
-       </tr>
-     </thead>
-
-     <tbody>
-     </tbody>
-   </table>
- </div>
-</div>
-</div>
-</div>
-
-
-
-
