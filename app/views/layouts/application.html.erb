@@ -41,14 +41,15 @@
           <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> logout
           <% end %>
         </li>
+        <!-- logoutしてる時 -->
         <% else %>
         <li>
-          <%= link_to user_path(current_user.id) do %>
+          <%= link_to root_path do %>
           <span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home
           <% end %>
         </li>
         <li>
-          <%= link_to root_path do %>
+          <%= link_to home_about_path do %>
           <span class="glyphicon glyphicon-link" aria-hidden="true"></span> About
           <% end %>
         </li>

@@ -19,7 +19,7 @@
        <tr>
         <td>
          <%= link_to user_path(book.user.id) do %>
-         ==book.user(image)===
+         <%= attachment_image_tag book.user, :profile_image,　format: 'jpeg', fallback: "no_image.jpg", size: "50x50" %>
          <% end %>
        </td>
        <td>
