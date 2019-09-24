@@ -35,9 +35,10 @@
           <%= f.submit "Sign up", class:"btn btn-success mt-5" %>
         </div>
         <% end %>
-        <!--  </form> -->
         <div class="row">
-          <a href="/users/sign_in">Log in</a>
+          <%= link_to new_user_session_path do %>
+          Log in
+          <% end %>
         </div>
       </div>
     </div>

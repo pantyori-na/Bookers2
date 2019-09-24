@@ -1,6 +1,19 @@
 	<div class='body'>
 		<div class='container'>
-			<p id="notice"></p>
+					<!-- error message -->
+			<% if @user.errors.any? %>
+			<div id="error_explanation">
+				<font color="red">
+					<h2><%= @user.errors.count %>errors prohibited this obj from being saved:</h2>
+					<ul>
+						<% @user.errors.full_messages.each do |message| %>
+						<li><%= message %></li>
+						<% end %>
+					</ul>
+				</font>
+			</div>
+			<% end %>
+			<!-- error message end -->
 			<div class="row">
 				<h2>User info</h2>
 			</div>

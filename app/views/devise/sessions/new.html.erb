@@ -1,7 +1,7 @@
   <div class='body'>
     <div class='container'>
 
-      <p id="notice"></p>
+      <!-- <p id="notice"></p> -->
       <div class='row'>
         <div class="row">
           <h2>Log in</h2>
@@ -25,7 +25,9 @@
         </div>
         <% end %>
         <div class="row">
-          <a href="/users/sign_up">Sign up</a><br />
+          <%= link_to new_user_registration_path do %>
+          Sign up
+          <% end %><br />
         </div>
         <div class="row">
           <a href="/users/password/new">Forgot your password?</a><br />
