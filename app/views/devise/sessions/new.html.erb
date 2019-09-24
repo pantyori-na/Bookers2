@@ -1,36 +1,35 @@
   <div class='body'>
     <div class='container'>
-
-      <p id="notice"></p>
-
-
-      <h2>Log in</h2>
-
-      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-        <div class="field">
-          <label for="user_name">Name</label><br />
-          <%= f.text_field :name, autofocus: true, class:"name", id:"inputName", placeholder:"名前"%>
+      <div class='row'>
+        <div class="row">
+          <h2>Log in</h2>
         </div>
-        <div class="field">
-          <label for="user_password">Password</label><br />
-          <%= f.password_field :password, autocomplete: "off", class:"password", id:"inputPassword", placeholder:"パスワード" %>
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class="row">
+          <label>Name</label><br />
+          <%= f.text_field :name, autofocus: true %>
+        </div>
+        <div class="row">
+          <label>Password</label><br />
+          <%= f.password_field :password, autocomplete: "off" %>
         </div>
 
-        <div class="field">
+        <div class="row">
           <input name="user[remember_me]" type="hidden" value="0" /><input type="checkbox" value="1" name="user[remember_me]" id="user_remember_me" />
           <label for="user_remember_me">Remember me</label>
         </div>
-        <div class="actions">
-          <%= f.submit "サインイン", class:"btn btn-lg btn-block btn-base-1 mt-20" %>
+        <div class="row">
+          <%= f.submit "Log in", class:"btn btn-primary btn-sm" %>
         </div>
         <% end %>
-        <!-- <div class="actions">
-          <input type="submit" name="commit" value="Log in" class="btn btn-primary" data-disable-with="Log in" />
+        <div class="row">
+          <%= link_to new_user_registration_path do %>
+          Sign up
+          <% end %><br />
         </div>
-      </form> -->
-
-      <a class="sign_up" href="/users/sign_up">Sign up</a><br />
-
-      <a href="/users/password/new">Forgot your password?</a><br />
+        <div class="row">
+          <a href="/users/password/new">Forgot your password?</a><br />
+        </div>
+      </div>
     </div>
   </div>
